@@ -26,24 +26,29 @@
 .operateButtons {
     display: flex;
     flex-wrap: wrap-reverse;
-    gap: 20px;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    flex-grow: 1;
+    align-items: center;
 }
 
 .button {
     font-size: 26px;
     height: 65px;
     width: 65px;
+    flex: 1 0 25%;
     border-radius: 10px;
     background-color: rgb(228, 228, 183);
 }
 
 #clear {
-    margin: 20px 16px 20px 20px;
+    margin: 20px 0px 20px 20px;
     flex-shrink: 0;
     align-self: flex-end;
     background-color: red;
     color: white;
+    flex: 0;
+    width: 100px;
+    
 }
 
 #divide,
