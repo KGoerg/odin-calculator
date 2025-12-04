@@ -30,60 +30,17 @@ function operate(firstNumber, operator, secondNumber) {
     }
 };
 
-const display = document.querySelector(".display");
-//Number buttons & decimal
-const zeroButton = document.querySelector("#zero");
-zeroButton.addEventListener("click", () => {
-    display.textContent = "0";
-    });
+// const display = document.querySelector(".display");
 
-const oneButton = document.querySelector("#one");
-oneButton.addEventListener("click", () => {
-    display.textContent = "1";
-    });
+document.querySelector('.operateButtons')
+  .addEventListener('click', event => {
+    let target = event.target;
+    if (target.matches('.button.number')) {
+      let value = target.textContent;
+      
+      firstNumber = document.querySelector('.display').value += value
+    }
+    console.log(firstNumber);
+  });
 
-const twoButton = document.querySelector("#two");
-twoButton.addEventListener("click", () => {
-    display.textContent = "2";
-    });
-
-const threeButton = document.querySelector("#three");
-threeButton.addEventListener("click", () => {
-    display.textContent = "3";
-    });
-
-const fourButton = document.querySelector("#four");
-fourButton.addEventListener("click", () => {
-    display.textContent = "4";
-    });
-
-const fiveButton = document.querySelector("#five");
-fiveButton.addEventListener("click", () => {
-    display.textContent = "5";
-    });
-
-const sixButton = document.querySelector("#six");
-sixButton.addEventListener("click", () => {
-    display.textContent = "6";
-    });
-
-const sevenButton = document.querySelector("#seven");
-sevenButton.addEventListener("click", () => {
-    display.textContent = "7";
-    });
-
-const eightButton = document.querySelector("#eight");
-eightButton.addEventListener("click", () => {
-    display.textContent = "8";
-    });
-
-const nineButton = document.querySelector("#nine");
-nineButton.addEventListener("click", () => {
-    display.textContent = "9";
-    });
-
-const decimalButton = document.querySelector("#decimal");
-decimalButton.addEventListener("click", () => {
-    display.textContent = ".";
-    });
 
