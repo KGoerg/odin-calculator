@@ -26,16 +26,14 @@
 .operateButtons {
     display: flex;
     flex-wrap: wrap-reverse;
-    justify-content: space-around;
-    flex-grow: 1;
-    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 .button {
     font-size: 26px;
     height: 65px;
-    width: 65px;
-    flex: 1 0 25%;
+    width: 80px;
     border-radius: 10px;
     background-color: rgb(228, 228, 183);
 }
@@ -46,9 +44,7 @@
     align-self: flex-end;
     background-color: red;
     color: white;
-    flex: 0;
-    width: 100px;
-    
+    height: 40px;
 }
 
 #divide,
