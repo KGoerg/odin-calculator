@@ -30,22 +30,31 @@ function operate(firstNumber, operator, secondNumber) {
     }
 };
 
-const display = document.querySelector("#display");
-function getFirstNumber() {
-    document.querySelector('.operateButtons')
-    .addEventListener('click', event => {
-    let target = event.target;
-    if (target.matches('.button.number')) {
-      let value = target.textContent;
-      firstNumber = document.querySelector('.display').value += value
-    }
-    console.log(firstNumber);
-  });
-}
+//Working on figuring out how to get numbers stored to variables.
+// const display = document.querySelector("#display");
+// function getFirstNumber() {
+//     document.querySelector('.operateButtons')
+//     .addEventListener('click', event => {
+//     let target = event.target;
+//     if (target.matches('.button.number')) {
+//       let value = target.textContent;
+//       firstNumber = document.querySelector('.display').value += value
+//     }
+//     console.log(firstNumber);
+//   });
+// }
 
-getFirstNumber();
+// getFirstNumber();
+
+firstNumber = document.querySelector(".button.number");
+console.log(firstNumber);
 
 const clearButton = document.querySelector("#clear")
 clearButton.addEventListener("click", () => {
     location.reload();
 })
+
+const equalsButton = document.querySelector("#equals");
+equalsButton.addEventListener("click", () => {
+    operate(firstNumber, operator, secondNumber)
+});
