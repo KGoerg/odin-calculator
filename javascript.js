@@ -30,17 +30,22 @@ function operate(firstNumber, operator, secondNumber) {
     }
 };
 
-// const display = document.querySelector(".display");
-
-document.querySelector('.operateButtons')
-  .addEventListener('click', event => {
+const display = document.querySelector("#display");
+function getFirstNumber() {
+    document.querySelector('.operateButtons')
+    .addEventListener('click', event => {
     let target = event.target;
     if (target.matches('.button.number')) {
       let value = target.textContent;
-      
       firstNumber = document.querySelector('.display').value += value
     }
     console.log(firstNumber);
   });
+}
 
+getFirstNumber();
 
+const clearButton = document.querySelector("#clear")
+clearButton.addEventListener("click", () => {
+    location.reload();
+})
