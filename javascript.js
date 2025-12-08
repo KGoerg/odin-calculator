@@ -18,6 +18,7 @@ let number;
 let firstNumber;
 let operator;
 let secondNumber;
+let numberArray = [];
 
 function operate(firstNumber, operator, secondNumber) {
     if (operator === "+") {
@@ -31,26 +32,33 @@ function operate(firstNumber, operator, secondNumber) {
     }
 };
 
-// Working on figuring out how to get numbers stored to variables.
 const display = document.querySelector(".display");
 
 const numberButtons = document.querySelectorAll(".button.number");
+const operatorButtons = document.querySelectorAll(".button.operator");
 
-let numberArray = [];
-
-numberButtons.forEach((button) => {
+function getFirstNumber() {
+    numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
         numberArray.push(button.textContent);
-        number = Number(numberArray.join(""));
-        display.textContent = number;
-        console.log(number)
+        firstNumber = Number(numberArray.join(""));
+        display.textContent = firstNumber;
+        console.log(firstNumber)
     })
-})
+})};
+
+getFirstNumber();
+
+operatorButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        display.textContent = button.textContent;
+    })
+});
 
 const clearButton = document.querySelector("#clear")
 clearButton.addEventListener("click", () => {
     location.reload();
-})
+});
 
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", () => {
