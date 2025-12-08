@@ -14,6 +14,7 @@ function divide(num1, num2) {
     return num1 / num2;
 };
 
+let number;
 let firstNumber;
 let operator;
 let secondNumber;
@@ -30,24 +31,21 @@ function operate(firstNumber, operator, secondNumber) {
     }
 };
 
-//Working on figuring out how to get numbers stored to variables.
-// const display = document.querySelector("#display");
-// function getFirstNumber() {
-//     document.querySelector('.operateButtons')
-//     .addEventListener('click', event => {
-//     let target = event.target;
-//     if (target.matches('.button.number')) {
-//       let value = target.textContent;
-//       firstNumber = document.querySelector('.display').value += value
-//     }
-//     console.log(firstNumber);
-//   });
-// }
+// Working on figuring out how to get numbers stored to variables.
+const display = document.querySelector(".display");
 
-// getFirstNumber();
+const numberButtons = document.querySelectorAll(".button.number");
 
-firstNumber = document.querySelector(".button.number");
-console.log(firstNumber);
+let numberArray = [];
+
+numberButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        numberArray.push(button.textContent);
+        number = numberArray.join("");
+        display.textContent = number;
+        console.log(number)
+    })
+})
 
 const clearButton = document.querySelector("#clear")
 clearButton.addEventListener("click", () => {
