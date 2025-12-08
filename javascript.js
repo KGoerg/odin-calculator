@@ -37,17 +37,31 @@ const display = document.querySelector(".display");
 const numberButtons = document.querySelectorAll(".button.number");
 const operatorButtons = document.querySelectorAll(".button.operator");
 
-function getFirstNumber() {
+// function getFirstNumber() {
+//     numberButtons.forEach((button) => {
+//     button.addEventListener("click", () => {
+//         numberArray.push(button.textContent);
+//         firstNumber = Number(numberArray.join(""));
+//         display.textContent = firstNumber;
+//         console.log(firstNumber)
+//     })
+// })};
+
+// getFirstNumber();
+
+//trying to rewrite the above as a function expression that returns the number we want under firstNumber variable, to be used for operating.
+firstNumber = function() {
     numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
         numberArray.push(button.textContent);
-        firstNumber = Number(numberArray.join(""));
-        display.textContent = firstNumber;
-        console.log(firstNumber)
+        number = Number(numberArray.join(""));
+        display.textContent = number;
+        console.log(number)
     })
+    return number;
 })};
 
-getFirstNumber();
+console.log(firstNumber());
 
 operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
