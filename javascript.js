@@ -41,7 +41,7 @@ let numberArray = [];
 numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
         numberArray.push(button.textContent);
-        number = numberArray.join("");
+        number = Number(numberArray.join(""));
         display.textContent = number;
         console.log(number)
     })
