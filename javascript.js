@@ -14,12 +14,17 @@ function divide(num1, num2) {
     return num1 / num2;
 };
 
+
 let number;
+let firstNumberArray = [];
 let firstUserNumber;
 let firstNumber;
-let operator;
+
+let secondNumberArray = [];
+let secondUserNumber;
 let secondNumber;
-let numberArray = [];
+
+let operator;
 
 function operate(firstNumber, operator, secondNumber) {
     if (operator === "+") {
@@ -41,8 +46,8 @@ const operatorButtons = document.querySelectorAll(".button.operator");
 firstUserNumber = function() {
     numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        numberArray.push(button.textContent);
-        number = Number(numberArray.join(""));
+        firstNumberArray.push(button.textContent);
+        number = Number(firstNumberArray.join(""));
         display.value = number;
         firstNumber = number;
         console.log(firstNumber);
@@ -51,10 +56,23 @@ firstUserNumber = function() {
 
 firstUserNumber();
 
+secondUserNumber = function() {
+    if (firstNumber === null) {
+        numberButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            secondNumberArray.push(button.textContent);
+            number = Number(secondNumberArray.join(""));
+            display.value = number;
+            secondNumber = number;
+            console.log(secondNumber)
+        })
+        })}};
+
+secondUserNumber();
+
 operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
         display.value = button.textContent;
-        console.log(firstNumber + 1);
     })
 });
 
