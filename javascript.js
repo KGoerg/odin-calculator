@@ -14,7 +14,6 @@ function divide(num1, num2) {
     return num1 / num2;
 };
 
-
 let number;
 let firstNumberArray = [];
 let firstUserNumber;
@@ -24,6 +23,7 @@ let secondNumberArray = [];
 let secondUserNumber;
 let secondNumber;
 
+let userOperator;
 let operator;
 
 function operate(firstNumber, operator, secondNumber) {
@@ -56,25 +56,31 @@ firstUserNumber = function() {
 
 firstUserNumber();
 
-secondUserNumber = function() {
-    if (firstNumber === null) {
-        numberButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            secondNumberArray.push(button.textContent);
-            number = Number(secondNumberArray.join(""));
-            display.value = number;
-            secondNumber = number;
-            console.log(secondNumber)
-        })
-        })}};
+//secondUserNumber does not work yet
+// secondUserNumber = function() {
+//     if (firstNumber !== null) {
+//         numberButtons.forEach((button) => {
+//         button.addEventListener("click", () => {
+//             secondNumberArray.push(button.textContent);
+//             number = Number(secondNumberArray.join(""));
+//             display.value = number;
+//             secondNumber = number;
+//             console.log(secondNumber)
+//         })
+//         })}};
 
-secondUserNumber();
+// secondUserNumber();
 
-operatorButtons.forEach((button) => {
+operator = function() {
+    operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
         display.value = button.textContent;
+        userOperator = display.value;
+        console.log(userOperator);
     })
-});
+})};
+
+operator();
 
 const clearButton = document.querySelector("#clear")
 clearButton.addEventListener("click", () => {
