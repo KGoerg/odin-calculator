@@ -15,6 +15,7 @@ function divide(num1, num2) {
 };
 
 let number;
+let firstUserNumber;
 let firstNumber;
 let operator;
 let secondNumber;
@@ -37,35 +38,23 @@ const display = document.querySelector(".display");
 const numberButtons = document.querySelectorAll(".button.number");
 const operatorButtons = document.querySelectorAll(".button.operator");
 
-// function getFirstNumber() {
-//     numberButtons.forEach((button) => {
-//     button.addEventListener("click", () => {
-//         numberArray.push(button.textContent);
-//         firstNumber = Number(numberArray.join(""));
-//         display.textContent = firstNumber;
-//         console.log(firstNumber)
-//     })
-// })};
-
-// getFirstNumber();
-
-//trying to rewrite the above as a function expression that returns the number we want under firstNumber variable, to be used for operating.
-firstNumber = function() {
+firstUserNumber = function() {
     numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
         numberArray.push(button.textContent);
         number = Number(numberArray.join(""));
         display.value = number;
-        console.log(number)
+        firstNumber = number;
+        console.log(firstNumber);
     })
-    return number;
 })};
 
-console.log(firstNumber());
+firstUserNumber();
 
 operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        display.textContent = button.textContent;
+        display.value = button.textContent;
+        console.log(firstNumber + 1);
     })
 });
 
