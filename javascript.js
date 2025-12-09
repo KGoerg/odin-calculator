@@ -50,7 +50,7 @@ firstUserNumber = function() {
         number = Number(firstNumberArray.join(""));
         display.value = number;
         firstNumber = number;
-        console.log(firstNumber);
+        console.log(`firstNumber = ${firstNumber}`);
     })
 })};
 
@@ -71,16 +71,16 @@ firstUserNumber();
 
 // secondUserNumber();
 
-operator = function() {
+userOperator = function() {
     operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
         display.value = button.textContent;
-        userOperator = display.value;
-        console.log(userOperator);
+        operator = display.value;
+        console.log(`operator = ${operator}`);
     })
 })};
 
-operator();
+userOperator();
 
 const clearButton = document.querySelector("#clear")
 clearButton.addEventListener("click", () => {
@@ -91,3 +91,5 @@ const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", () => {
     operate(firstNumber, operator, secondNumber)
 });
+
+console.log(operate(firstNumber, operator, 3))
