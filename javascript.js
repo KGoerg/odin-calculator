@@ -55,7 +55,7 @@ firstNumber = function() {
     button.addEventListener("click", () => {
         numberArray.push(button.textContent);
         number = Number(numberArray.join(""));
-        display.textContent = number;
+        display.value = number;
         console.log(number)
     })
     return number;
