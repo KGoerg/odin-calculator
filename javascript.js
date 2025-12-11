@@ -43,7 +43,7 @@ const display = document.querySelector(".display");
 const numberButtons = document.querySelectorAll(".button.number");
 const operatorButtons = document.querySelectorAll(".button.operator");
 
-firstUserNumber = function() {
+getNumbers = function() {
     numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
         firstNumberArray.push(button.textContent);
@@ -54,7 +54,7 @@ firstUserNumber = function() {
     })
 })};
 
-firstUserNumber();
+getNumbers();
 
 //secondUserNumber does not work yet
 // secondUserNumber = function() {
@@ -91,5 +91,3 @@ const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", () => {
     operate(firstNumber, operator, secondNumber)
 });
-
-console.log(operate(firstNumber, operator, 3))
