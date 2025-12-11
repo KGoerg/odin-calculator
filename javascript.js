@@ -11,8 +11,11 @@ function multiply(num1, num2) {
 };
 
 function divide(num1, num2) {
+    if (num2 === 0) {
+        return "Really?";
+    } else {
     return num1 / num2;
-};
+}};
 
 let number;
 let getNumbers;
@@ -27,15 +30,15 @@ let secondNumber;
 let userOperator;
 let operator;
 
-function operate(firstNumber, operator, secondNumber) {
-    if (operator === "+") {
-        return add(firstNumber, secondNumber);
-    } else if (operator === "-") {
-        return subtract(firstNumber, secondNumber);
-    } else if (operator === "*") {
-        return multiply(firstNumber, secondNumber);
-    } else if (operator === "/") {
-        return divide(firstNumber, secondNumber);
+function operate(num1, action, num2) {
+    if (action === "+") {
+        return add(num1, num2);
+    } else if (action === "-") {
+        return subtract(num1, num2);
+    } else if (action === "X") {
+        return multiply(num1, num2);
+    } else if (action === "/") {
+        return divide(num1, num2);
     }
 };
 
@@ -83,5 +86,5 @@ clearButton.addEventListener("click", () => {
 
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", () => {
-    operate(firstNumber, operator, secondNumber)
+    display.value = operate(firstNumber, operator, secondNumber)
 });
