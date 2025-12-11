@@ -15,6 +15,7 @@ function divide(num1, num2) {
 };
 
 let number;
+let getNumbers;
 let firstNumberArray = [];
 let firstUserNumber;
 let firstNumber;
@@ -43,34 +44,6 @@ const display = document.querySelector(".display");
 const numberButtons = document.querySelectorAll(".button.number");
 const operatorButtons = document.querySelectorAll(".button.operator");
 
-getNumbers = function() {
-    numberButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        firstNumberArray.push(button.textContent);
-        number = Number(firstNumberArray.join(""));
-        display.value = number;
-        firstNumber = number;
-        console.log(`firstNumber = ${firstNumber}`);
-    })
-})};
-
-getNumbers();
-
-//secondUserNumber does not work yet
-// secondUserNumber = function() {
-//     if (firstNumber !== null) {
-//         numberButtons.forEach((button) => {
-//         button.addEventListener("click", () => {
-//             secondNumberArray.push(button.textContent);
-//             number = Number(secondNumberArray.join(""));
-//             display.value = number;
-//             secondNumber = number;
-//             console.log(secondNumber)
-//         })
-//         })}};
-
-// secondUserNumber();
-
 userOperator = function() {
     operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -81,6 +54,27 @@ userOperator = function() {
 })};
 
 userOperator();
+
+getNumbers = function() {
+    numberButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        if (operator === undefined) {
+            firstNumberArray.push(button.textContent);
+            number = Number(firstNumberArray.join(""));
+            display.value = number;
+            firstNumber = number;
+            console.log(`firstNumber = ${firstNumber}`);
+        } else {
+            secondNumberArray.push(button.textContent);
+            number = Number(secondNumberArray.join(""));
+            display.value = number;
+            secondNumber = number;
+            console.log(`secondNumber = ${secondNumber}`)
+        }
+    })
+})};
+
+getNumbers();
 
 const clearButton = document.querySelector("#clear")
 clearButton.addEventListener("click", () => {
