@@ -18,17 +18,16 @@ function divide(num1, num2) {
 }};
 
 let number;
-let getNumbers;
 let firstNumberArray = [];
-let firstUserNumber;
 let firstNumber;
-
 let secondNumberArray = [];
-let secondUserNumber;
 let secondNumber;
-
-let userOperator;
 let operator;
+
+//Function expressions
+let getNumbers;
+let getUserOperator;
+
 
 function operate(num1, action, num2) {
     if (action === "+") {
@@ -47,7 +46,7 @@ const display = document.querySelector(".display");
 const numberButtons = document.querySelectorAll(".button.number");
 const operatorButtons = document.querySelectorAll(".button.operator");
 
-userOperator = function() {
+getUserOperator = function() {
     operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
         display.value = button.textContent;
@@ -59,7 +58,7 @@ userOperator = function() {
     })
 })};
 
-userOperator();
+getUserOperator();
 
 getNumbers = function() {
     numberButtons.forEach((button) => {
