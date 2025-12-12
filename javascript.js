@@ -50,8 +50,10 @@ const operatorButtons = document.querySelectorAll(".button.operator");
 userOperator = function() {
     operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        display.value = button.textContent;
-        operator = display.value;
+        //Below code would display the operator symbol and assign the operator symbol to whatever was displayed. Turning this off for now to see if it helps with calculator functionality.
+        // display.value = button.textContent;
+        // operator = display.value;
+        operator = button.textContent;
         console.log(`operator = ${operator}`);
     })
 })};
@@ -86,5 +88,5 @@ clearButton.addEventListener("click", () => {
 
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", () => {
-    display.value = operate(firstNumber, operator, secondNumber)
+    display.value = operate(firstNumber, operator, secondNumber);
 });
