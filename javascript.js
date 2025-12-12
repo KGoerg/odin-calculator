@@ -1,3 +1,14 @@
+let number;
+let firstNumberArray = [];
+let firstNumber;
+let secondNumberArray = [];
+let secondNumber;
+let operator;
+
+//Function expressions
+let getNumbers;
+let getUserOperator;
+
 function add(num1, num2) {
     return num1 + num2
 };
@@ -17,18 +28,6 @@ function divide(num1, num2) {
     return num1 / num2;
 }};
 
-let number;
-let firstNumberArray = [];
-let firstNumber;
-let secondNumberArray = [];
-let secondNumber;
-let operator;
-
-//Function expressions
-let getNumbers;
-let getUserOperator;
-
-
 function operate(num1, action, num2) {
     if (action === "+") {
         return add(num1, num2);
@@ -42,6 +41,8 @@ function operate(num1, action, num2) {
 };
 
 const display = document.querySelector(".display");
+//Makes display unable to take in keyboard commands at this time.
+display.readOnly = true;
 
 const numberButtons = document.querySelectorAll(".button.number");
 const operatorButtons = document.querySelectorAll(".button.operator");
