@@ -4,28 +4,29 @@ let firstNumber;
 let secondNumberArray = [];
 let secondNumber;
 let operator;
+let result;
 
 //Function expressions
 let getNumbers;
 let getUserOperator;
 
 function add(num1, num2) {
-    return num1 + num2
+    return result = num1 + num2
 };
 
 function subtract(num1, num2) {
-    return num1 - num2;
+    return result = num1 - num2;
 };
 
 function multiply(num1, num2) {
-    return num1 * num2;
+    return result = num1 * num2;
 };
 
 function divide(num1, num2) {
     if (num2 === 0) {
         return "Really?";
     } else {
-    return num1 / num2;
+    return result = num1 / num2;
 }};
 
 function operate(num1, action, num2) {
