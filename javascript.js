@@ -73,7 +73,7 @@ getNumbers = function() {
             console.log(`firstNumber = ${firstNumber}`);
         } else if (result !== undefined) {
             firstNumber = result;
-            //Need to figure out how to get secondNumber to clear and be replaced
+            secondNumberArray = [];
             secondNumberArray.push(button.textContent);
             number = Number(secondNumberArray.join(""));
             display.value = number;
