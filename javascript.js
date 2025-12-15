@@ -11,7 +11,7 @@ let getNumbers;
 let getUserOperator;
 
 function add(num1, num2) {
-    return result = num1 + num2
+    return result = num1 + num2;
 };
 
 function subtract(num1, num2) {
@@ -71,7 +71,14 @@ getNumbers = function() {
             display.value = number;
             firstNumber = number;
             console.log(`firstNumber = ${firstNumber}`);
-        } else {
+        } else if (result !== undefined) {
+            firstNumber = result;
+            //Need to figure out how to get secondNumber to clear and be replaced
+            secondNumberArray.push(button.textContent);
+            number = Number(secondNumberArray.join(""));
+            display.value = number;
+            secondNumber = number; 
+        } else if (firstNumber !== undefined) {
             secondNumberArray.push(button.textContent);
             number = Number(secondNumberArray.join(""));
             display.value = number;
@@ -91,4 +98,5 @@ clearButton.addEventListener("click", () => {
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", () => {
     display.value = operate(firstNumber, operator, secondNumber);
+    console.log(`result = ${result}`);
 });
