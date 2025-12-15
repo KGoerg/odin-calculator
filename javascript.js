@@ -3,6 +3,8 @@ let firstNumberArray = [];
 let firstNumber;
 let secondNumberArray = [];
 let secondNumber;
+let newSecondNumberArray = [];
+let newSecondNumber;
 let operator;
 let result;
 
@@ -73,16 +75,19 @@ getNumbers = function() {
             console.log(`firstNumber = ${firstNumber}`);
         } else if (result !== undefined) {
             firstNumber = result;
-            secondNumberArray = [];
+            //Need to figure out why secondNumberArray isn't pushing multiple button clicks to the array...
+            secondNumberArray = newSecondNumberArray;
             secondNumberArray.push(button.textContent);
             number = Number(secondNumberArray.join(""));
             display.value = number;
             secondNumber = number; 
+            console.log(secondNumberArray);
         } else if (firstNumber !== undefined) {
             secondNumberArray.push(button.textContent);
             number = Number(secondNumberArray.join(""));
             display.value = number;
             secondNumber = number;
+            console.log(secondNumberArray);
             console.log(`secondNumber = ${secondNumber}`)
         }
     })
