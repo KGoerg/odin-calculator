@@ -14,18 +14,21 @@ let getUserOperator;
 function add(num1, num2) {
     result = num1 + num2;
     firstNumber = result;
+    secondNumberArray = [];
     return roundToTenDecimals(result);
 };
 
 function subtract(num1, num2) {
     result = num1 - num2;
     firstNumber = result;
+    secondNumberArray = [];
     return roundToTenDecimals(result);
 };
 
 function multiply(num1, num2) {
     result = num1 * num2;
     firstNumber = result;
+    secondNumberArray = [];
     return roundToTenDecimals(result);
 };
 
@@ -35,6 +38,7 @@ function divide(num1, num2) {
     } else {
     result = num1 / num2;
     firstNumber = result;
+    secondNumberArray = [];
     return roundToTenDecimals(result);
 }};
 
