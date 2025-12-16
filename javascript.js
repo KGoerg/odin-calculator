@@ -4,7 +4,6 @@ let firstNumber;
 let secondNumberArray = [];
 let secondNumber;
 let newSecondNumberArray = [];
-let newSecondNumber;
 let operator;
 let result;
 
@@ -13,22 +12,26 @@ let getNumbers;
 let getUserOperator;
 
 function add(num1, num2) {
-    return result = num1 + num2;
+    result = num1 + num2;
+    return roundToTenDecimals(result);
 };
 
 function subtract(num1, num2) {
-    return result = num1 - num2;
+    result = num1 - num2;
+    return roundToTenDecimals(result);
 };
 
 function multiply(num1, num2) {
-    return result = num1 * num2;
+    result = num1 * num2;
+    return roundToTenDecimals(result);
 };
 
 function divide(num1, num2) {
     if (num2 === 0) {
         return "Really?";
     } else {
-    return result = num1 / num2;
+    result = num1 / num2;
+    return roundToTenDecimals(result);
 }};
 
 function operate(num1, action, num2) {
@@ -64,6 +67,9 @@ getUserOperator = function() {
 
 getUserOperator();
 
+function roundToTenDecimals(num) {
+    return Number(Math.round(num + "e+10") + "e-10");
+}
 getNumbers = function() {
     numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -75,7 +81,7 @@ getNumbers = function() {
             console.log(`firstNumber = ${firstNumber}`);
         } else if (result !== undefined) {
             firstNumber = result;
-            //Need to figure out why secondNumberArray isn't pushing multiple button clicks to the array...
+            //Need to fix secondNumber again...See mousepad pseudocode
             secondNumberArray = newSecondNumberArray;
             secondNumberArray.push(button.textContent);
             number = Number(secondNumberArray.join(""));
