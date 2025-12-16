@@ -13,16 +13,19 @@ let getUserOperator;
 
 function add(num1, num2) {
     result = num1 + num2;
+    firstNumber = result;
     return roundToTenDecimals(result);
 };
 
 function subtract(num1, num2) {
     result = num1 - num2;
+    firstNumber = result;
     return roundToTenDecimals(result);
 };
 
 function multiply(num1, num2) {
     result = num1 * num2;
+    firstNumber = result;
     return roundToTenDecimals(result);
 };
 
@@ -31,6 +34,7 @@ function divide(num1, num2) {
         return "Really?";
     } else {
     result = num1 / num2;
+    firstNumber = result;
     return roundToTenDecimals(result);
 }};
 
@@ -69,7 +73,8 @@ getUserOperator();
 
 function roundToTenDecimals(num) {
     return Number(Math.round(num + "e+10") + "e-10");
-}
+};
+
 getNumbers = function() {
     numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -79,15 +84,6 @@ getNumbers = function() {
             display.value = number;
             firstNumber = number;
             console.log(`firstNumber = ${firstNumber}`);
-        } else if (result !== undefined) {
-            firstNumber = result;
-            //Need to fix secondNumber again...See mousepad pseudocode
-            secondNumberArray = newSecondNumberArray;
-            secondNumberArray.push(button.textContent);
-            number = Number(secondNumberArray.join(""));
-            display.value = number;
-            secondNumber = number; 
-            console.log(secondNumberArray);
         } else if (firstNumber !== undefined) {
             secondNumberArray.push(button.textContent);
             number = Number(secondNumberArray.join(""));
