@@ -65,7 +65,7 @@ getUserOperator = function() {
     operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
         display.value = button.textContent;
-        if (secondNumber !== undefined) {
+        if (secondNumber !== undefined && result === undefined) {
             display.value = operate(firstNumber, operator, secondNumber);
         }
         operator = button.textContent;
