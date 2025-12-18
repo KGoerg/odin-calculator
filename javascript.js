@@ -3,7 +3,6 @@ let firstNumberArray = [];
 let firstNumber;
 let secondNumberArray = [];
 let secondNumber;
-let newSecondNumberArray = [];
 let operator;
 let result;
 
