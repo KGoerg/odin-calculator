@@ -1,24 +1,24 @@
-function add (num1, num2) {
-    return num1 + num2;
-}
-
-function subtract (num1, num2) {
-    return num1 - num2;
-}
-
-function multiply (num1, num2) {
-    return num1 * num2;
-}
-
-function divide (num1, num2) {
-    return num1 / num2;
-}
-
 let firstNumber;
-let operator = "";
+let operator;
 let secondNumber;
 let firstNumberArray = [];
 let secondNumberArray = [];
+
+function add (num1, num2) {
+    return result = num1 + num2;
+}
+
+function subtract (num1, num2) {
+    return result = num1 - num2;
+}
+
+function multiply (num1, num2) {
+    return result = num1 * num2;
+}
+
+function divide (num1, num2) {
+    return result = num1 / num2;
+}
 
 function operate(num1, operator, num2) {
     if (operator === "+") {
@@ -38,44 +38,42 @@ const display = document.querySelector(".display");
 //Makes display unable to take in keyboard commands at this time.
 display.readOnly = true;
 
-function getFirstNumber() {
-    firstNumber;
+function getNumbers() {
     numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        firstNumberArray.push(button.textContent);
-        number = Number(firstNumberArray.join(""));
-        firstNumber = number;
-        display.value = firstNumber;
-        console.log(`firstNumber = ${firstNumber}`);
+        if (secondNumber === undefined && operator === undefined) {
+            firstNumberArray.push(button.textContent);
+            number = Number(firstNumberArray.join(""));
+            firstNumber = number;
+            display.value = firstNumber;
+            console.log(`firstNumber = ${firstNumber}`);
+        } else {
+            secondNumberArray.push(button.textContent);
+            number = Number(secondNumberArray.join(""));
+            secondNumber = number;
+            display.value = secondNumber;
+            console.log(`secondNumber = ${secondNumber}`);
+        }
     })});
-    return firstNumber;
 };
 
-function getSecondNumber() {
-    numberButtons.forEach((button) => {
-    secondNumber;
-    button.addEventListener("click", () => {
-        secondNumberArray.push(button.textContent);
-        number = Number(secondNumberArray.join(""));
-        secondNumber = number;
-        display.value = secondNumber;
-        console.log(`secondNumber = ${secondNumber}`);
-    })});
-    return secondNumber;
-};
+getNumbers();
 
 function getOperator() {
     operatorButtons.forEach((button) => {
-        operator;
         button.addEventListener("click", () => {
             operator = button.textContent;
             display.value = operator;
         })
-        return operator;
     })
 }
 
 getOperator();
+
+const equalsButton = document.querySelector("#equals");
+equalsButton.addEventListener("click", () => {
+    display.value = operate(firstNumber, operator, secondNumber);
+})
 
 const clearButton = document.querySelector("#clear")
 clearButton.addEventListener("click", () => {
