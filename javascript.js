@@ -1,23 +1,36 @@
 let firstNumber;
 let operator;
 let secondNumber;
+let result;
 let firstNumberArray = [];
 let secondNumberArray = [];
 
 function add (num1, num2) {
-    return result = num1 + num2;
+    result = num1 + num2;
+    firstNumber = result;
+    secondNumberArray = [];
+    return result;
 }
 
 function subtract (num1, num2) {
-    return result = num1 - num2;
+    result = num1 - num2;
+    firstNumber = result;
+    secondNumberArray = [];
+    return result;
 }
 
 function multiply (num1, num2) {
-    return result = num1 * num2;
+    result = num1 * num2;
+    firstNumber = result;
+    secondNumberArray = [];
+    return result;
 }
 
 function divide (num1, num2) {
-    return result = num1 / num2;
+    result = num1 / num2;
+    firstNumber = result;
+    secondNumberArray = [];
+    return result;
 }
 
 function operate(num1, operator, num2) {
@@ -68,11 +81,12 @@ function getOperator() {
             operator = button.textContent;
             display.value = operator;
             }
+            console.log(`operator = ${operator}`);
         })
     })
 }
 
-console.log(getOperator());
+getOperator();
 
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", () => {
