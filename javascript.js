@@ -62,13 +62,17 @@ getNumbers();
 function getOperator() {
     operatorButtons.forEach((button) => {
         button.addEventListener("click", () => {
+            if (firstNumber !== undefined && secondNumber !== undefined) {
+                display.value = operate(firstNumber, operator, secondNumber);
+            } else {
             operator = button.textContent;
             display.value = operator;
+            }
         })
     })
 }
 
-getOperator();
+console.log(getOperator());
 
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", () => {
