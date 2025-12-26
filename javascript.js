@@ -77,7 +77,6 @@ function useOperator() {
         button.addEventListener("click", () => {
             if (result !== undefined) {
                 operator = button.textContent;
-                display.value = operate(result, operator, secondNumber);
             } else if (firstNumber !== undefined && secondNumber !== undefined) {
                 display.value = operate(firstNumber, operator, secondNumber);
                 operator = button.textContent;
@@ -94,8 +93,12 @@ useOperator();
 
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", () => {
-    display.value = operate(firstNumber, operator, secondNumber);
-})
+    if (result !== undefined) {
+        display.value = operate(result, operator, secondNumber);
+    } else {
+        display.value = operate(firstNumber, operator, secondNumber);
+    }
+});
 
 const clearButton = document.querySelector("#clear")
 clearButton.addEventListener("click", () => {
