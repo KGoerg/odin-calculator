@@ -7,28 +7,28 @@ let secondNumberArray = [];
 
 function add (num1, num2) {
     result = num1 + num2;
-    firstNumber = result;
+    // firstNumber = result;
     secondNumberArray = [];
     return result;
 }
 
 function subtract (num1, num2) {
     result = num1 - num2;
-    firstNumber = result;
+    // firstNumber = result;
     secondNumberArray = [];
     return result;
 }
 
 function multiply (num1, num2) {
     result = num1 * num2;
-    firstNumber = result;
+    // firstNumber = result;
     secondNumberArray = [];
     return result;
 }
 
 function divide (num1, num2) {
     result = num1 / num2;
-    firstNumber = result;
+    // firstNumber = result;
     secondNumberArray = [];
     return result;
 }
@@ -72,10 +72,13 @@ function getNumbers() {
 
 getNumbers();
 
-function getOperator() {
+function useOperator() {
     operatorButtons.forEach((button) => {
         button.addEventListener("click", () => {
-            if (firstNumber !== undefined && secondNumber !== undefined) {
+            if (result !== undefined) {
+                operator = button.textContent;
+                display.value = operate(result, operator, secondNumber);
+            } else if (firstNumber !== undefined && secondNumber !== undefined) {
                 display.value = operate(firstNumber, operator, secondNumber);
                 operator = button.textContent;
             } else {
@@ -87,7 +90,7 @@ function getOperator() {
     })
 }
 
-getOperator();
+useOperator();
 
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", () => {
