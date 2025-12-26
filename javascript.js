@@ -75,7 +75,9 @@ getNumbers();
 function useOperator() {
     operatorButtons.forEach((button) => {
         button.addEventListener("click", () => {
-            if (result !== undefined) {
+            if (result !== undefined && secondNumber !== undefined) {
+                display.value = operate(result, operator, secondNumber);
+            } else if (result !== undefined) {
                 operator = button.textContent;
             } else if (firstNumber !== undefined && secondNumber !== undefined) {
                 display.value = operate(firstNumber, operator, secondNumber);
@@ -87,7 +89,7 @@ function useOperator() {
             console.log(`operator = ${operator}`);
         })
     })
-}
+};
 
 useOperator();
 
