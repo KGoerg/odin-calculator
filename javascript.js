@@ -77,6 +77,7 @@ function getOperator() {
         button.addEventListener("click", () => {
             if (firstNumber !== undefined && secondNumber !== undefined) {
                 display.value = operate(firstNumber, operator, secondNumber);
+                operator = button.textContent;
             } else {
             operator = button.textContent;
             display.value = operator;
